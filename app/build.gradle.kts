@@ -40,14 +40,11 @@ dependencies {
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
-    implementation(libs.room.common.jvm)
+//    implementation(libs.room.common.jvm)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
 
-    // Biblioteca principal
-    implementation("androidx.room:room-runtime:2.6.1")
-
-    // Processador de anotacoes do Room (necessario para gerar codigo automaticamente)
-    annotationProcessor("androidx.room:room-compiler:2.6.1")
+    implementation("androidx.room:room-runtime:2.7.0")
+    annotationProcessor("androidx.room:room-compiler:2.7.0")
 }

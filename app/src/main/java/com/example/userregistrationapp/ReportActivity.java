@@ -24,7 +24,7 @@ public class ReportActivity extends AppCompatActivity {
         // Encontra o botao e define o clique para voltar
         Button btnVoltar = findViewById(R.id.btnVoltar);
         // O botao de retorno utilizando expressao lambda
-        btnVoltar.setOnClickListener(v -> voltarParaCadastro());
+        btnVoltar.setOnClickListener(this::voltarParaCadastro);
 
         /*
             Conexao com o banco de dados
@@ -46,7 +46,7 @@ public class ReportActivity extends AppCompatActivity {
         // Loop "for-each" para percorrer cada objeto User dentro da lista recuperada
         for (User user : userList) {
             report.append("Nome: ").append(user.getName())
-                    .append("\n").append("CPF: ").append(user.getCPF())
+                    .append("\n").append("CPF: ").append(user.getCpf())
                     .append("\n\n");
         }
 
@@ -55,10 +55,9 @@ public class ReportActivity extends AppCompatActivity {
     }
 
     // Metodo responsavel pela navegacao entre as telas do app
-    public void voltarParaCadastro() {
-        // Intent para abrir a tela de cadastro
+    public void voltarParaCadastro(android.view.View view) {
         Intent intent = new Intent(ReportActivity.this, MainActivity.class);
         startActivity(intent);
-        finish(); // fecha a tela de relatorio para nao acumular na pilha de terefas
+        finish();
     }
 }
